@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count of countries</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['geochart']});
+        google.charts.setOnLoadCallback(drawRegionsMap);
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Country', 'country_count'],
+                ['United States',1950],
+                ['Malaysia',512],
+                ['Republika ng Pilipinas',355],
+                ['Brasil',321],
+                ['India',319],
+                ['Indonesia',3170],
+                ['United Kingdom',264],
+                ['Australia',101],
+                ['Thailand',101],
+                ['España',85],
+                ['Japan',7400],
+                ['Canada',71],
+                ['South Africa',66],
+                ['Nigeria',65],
+                ['Italia',52],
+                ['Singapore',47],
+                ['Argentina',45],
+                ['France',43],
+                ['United Arab Emirates',37],
+                ['Türkiye',34],
+                ['Россия',32],
+                ['Pakistan',28],
+                ['Ireland',25],
+                ['Colombia',19],
+                ['Portugal',19],
+                ['Venezuela',19],
+                ['Sverige',18],
+                ['New Zealand',18],
+                ['México',17],
+                ['România',17]
+            ]);
+            var options = {};
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+<div id="regions_div" style="width: 100%; height: 100%; zoom: 1"></div>
+</body>
+</html>

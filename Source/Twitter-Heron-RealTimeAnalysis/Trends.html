@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="" data-ng-app="twitter">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Twitter-Heron Real-Time Analysis Use case</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <!-- external css -->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+
+
+
+    <![endif]-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+      <script type="text/javascript" src="js/Welcome.js"></script>
+      <script src="js/markerclusterer.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0NOFXyZGIHbqihcpwpfV9Xgu_DUMDXfQ"></script>
+      <script src="http://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+      <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+      <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
+
+      <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+      <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+      <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+      <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+      <!--<script src="markers.js"></script>-->
+      <!--<script src="app.js"></script>-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script src="js/angular-chart.js"></script>
+      <script src="js/angular-chart.min.js"></script>
+
+  </head>
+
+  <body>
+  <!-- container section start -->
+  <section id="container" class="">
+
+
+      <!--header start-->
+      <header class="header dark-bg">
+
+          <!--logo start-->
+          <a href="index.html" class="logo">Twitter <span class="lite">Heron</span></a>
+          <!--logo end-->
+
+          <div class="nav search-row" id="top_menu">
+              <!--  search form start -->
+              <ul class="nav top-menu">
+                  <li>
+                      <form class="navbar-form">
+                          <input class="form-control" placeholder="Search" type="text">
+                      </form>
+                  </li>
+              </ul>
+              <!--  search form end -->
+          </div>
+
+          <a class="logo1" href="index.html">
+              <i class="icon_house_alt"></i>
+              <span>Dashboard</span>
+          </a>
+
+          <a class="logo1" href="Trends.html">
+              <i class="icon_genius"></i>
+              <span>TrendZ</span>
+          </a>
+          <a class="logo1" href="chart-chartjs.html">
+              <i class="icon_piechart"></i>
+              <span>Charts</span>
+          </a>
+
+          <div class="top-nav notification-row">
+              <!-- notificatoin dropdown start-->
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <!--<img alt="" src="">-->
+                            </span>
+                          <span class="username">Chaitu Manne</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                          <li class="eborder-top">
+                              <a href=""><i class="icon_profile"></i> My Profile</a>
+                          </li>
+                          <li>
+                              <a href=""><i class="icon_mail_alt"></i> My Inbox</a>
+                          </li>
+                          <li>
+                              <a href=""><i class="icon_chat_alt"></i> Chats</a>
+                          </li>
+                          <li>
+                              <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+              <!-- notificatoin dropdown end-->
+          </div>
+
+      </header>
+
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+
+
+              <div class="row">
+                  <div class="col-lg-12">
+                      <h3 class="page-header" style="color: #000000"><i class="fa fa-laptop"></i> TrendZ</h3>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <!-- Bar Chart-->
+                  <div class="col-lg-6">
+                          <div class="barTrend" ng-controller="barchart" style="height: 400px;width: 700px">
+                              <h3><b> Top 3 most tweeted countries in the past one hour</b></h3>
+
+                              <canvas id="bar" class="chart chart-bar"
+                                      chart-colors="colors3" chart-data="data3" chart-labels="labels3" chart-series="series3" chart-click="click"
+                              >
+                              </canvas>
+                          </div>
+                  </div>
+                  <!-- Bubble Chart -->
+                  <div class="col-lg-6">
+                          <div class="bubbleTrend">
+                              <h2><b>Web v/s Mobile Trend in the Last one hour</b></h2>
+                              <div ng-controller="BubbleCtrl" style="height: 400px;width: 700px">
+
+                                  <canvas class="chart chart-bubble" chart-data="data2"
+                                          chart-colors="colors2" chart-options="options2" chart-labels="labels2"  chart-series="series2"
+                                          chart-labelString="labelString2"
+                                  ></canvas>
+                              </div>
+                          </div>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
+
+  </section>
+  <!-- container section end -->
+
+    <!-- javascripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- jquery knob -->
+    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>

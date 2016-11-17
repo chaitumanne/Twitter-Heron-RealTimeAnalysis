@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twitter">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <script type="text/javascript" src="js/Welcome.js"></script>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="js/angular-chart.js"></script>
+    <script src="js/angular-chart.min.js"></script>
+
+</head>
+<body>
+<div class="row" ng-controller="barchart" >
+    <div class="col-lg-6 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Bar chart</div>
+            <div class="panel-body" style="height: 400px;width: 400px">
+                <canvas id="bar" class="chart chart-bar"
+                        chart-colors="colors" chart-data="data" chart-labels="labels" chart-series="series">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
