@@ -6,7 +6,7 @@ Presentation Link: https://www.dropbox.com/s/x8zhtdxjr978l04/Twitter-Heron-RealT
 
 #Heron
 
-Heron is an platform developed by Twitter for real time analysis. It is developed on top of Storm and is fully compatible with Storm API. 
+Heron is a platform developed by Twitter for real-time analysis. It is developed on top of Storm and is fully compatible with Storm API. 
 
 #Hackathon_CalmCoders
 
