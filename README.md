@@ -1,5 +1,9 @@
 # Twitter-Heron-RealTimeAnalysis
 
+YouTube Link : https://www.youtube.com/watch?v=-lTSz09xOFw&feature=youtu.be
+
+Presentation Link: https://www.dropbox.com/s/x8zhtdxjr978l04/Twitter-Heron-RealTimeAnalysis.pptx?dl=0
+
 #Heron
 
 Heron is an platform developed by Twitter for real time analysis. It is developed on top of Storm and is fully compatible with Storm API. 
@@ -35,7 +39,3 @@ HashTagsBolt: In this bolt all the different hashtags are present in each and ev
 TopTenHashTagsBolt: In this bolt the hash tags that are emitted from the previous bolt are gathered and then the count of the hashtags are calculated. This is done in order to findout the most trending HashTag, Top ten hashtags. These details are then stored into the MongoDB which are later retrieved to display on the front end.
 
 SentimentAnalysisBolt: In this bolt the sentiment is calculated for each and every tweet that comes to firehose in order to know whether the tweet was made in positive, negative or neutral mood. The overall count is then stored in MongoDB, retrieved it on the UI and then a PIE chart is used to display the comparitve results.
-
-YouTube Link : https://www.youtube.com/watch?v=-lTSz09xOFw&feature=youtu.be
-
-Presentation Link: https://www.dropbox.com/s/x8zhtdxjr978l04/Twitter-Heron-RealTimeAnalysis.pptx?dl=0
